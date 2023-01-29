@@ -10,7 +10,7 @@ function WelcomeScreen({ navigation }) {
 
     const login = async () => {
         await authorize();
-        await authorize();
+        // await authorize();
         navigation.navigate('UserScreen');
 
 

@@ -21,27 +21,31 @@ const list = [
 function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(true);
     return (
-        <View >
+        <View>
             {modalVisible && (
                 <DeliveryModal />
             )}
+
             <TouchableOpacity onPress={() => navigation.navigate('Delivery')}>
                 <AddressInput onPress={'sort'} />
             </TouchableOpacity>
-            <View style={{ width: '90%', height: 130, backgroundColor: colors.white, flexDirection: 'row', padding: 10 }}>
-                <Image style={{ width: 100, height: 100 }} source={require('../assets/first30.jpg')} />
-                <Text style={{ marginLeft: 50, marginTop: 20, fontSize: 16 }}>
-                    Get 30 EGP discount on your
-                    {'\n'}
-                    First THREE orders above 80
-                    {'\n'}
-                    EGP with code THREE30
-                </Text>
+            <View style={styles.firstViewContainer}>
+                <View style={styles.boxContainer}>
+                    <Image style={styles.image} source={require('../assets/first30.jpg')} />
+                    <Text style={styles.text}>
+                        Get 30 EGP discount on your
+                        {'\n'}
+                        First THREE orders above 80
+                        {'\n'}
+                        EGP with code THREE30
+                    </Text>
+                </View>
+                <Offers />
             </View>
-            <Offers />
+
             <FlatList
                 data={list}
-                renderItem={({ item }) => (<HomeList />)}
+                renderItem={() => (<HomeList />)}
                 keyExtractor={item => item.id}
                 pagingEnabled={true}
             />
@@ -70,6 +74,25 @@ const styles = StyleSheet.create({
         width: "100%",
         marginBottom: 15
     },
+    firstViewContainer: {
+        paddingHorizontal: 8
+    },
+    boxContainer: {
+        width: '90%',
+        height: 130,
+        backgroundColor: colors.white,
+        flexDirection: 'row',
+        padding: 15
+    },
+    image: {
+        width: 100,
+        height: 100
+    },
+    text: {
+        marginLeft: 50,
+        marginTop: 20,
+        fontSize: 16
+    }
 });
 
 export default HomeScreen;

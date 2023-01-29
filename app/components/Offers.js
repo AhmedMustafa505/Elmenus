@@ -42,8 +42,7 @@ const styles = StyleSheet.create({
         height: 130,
         paddingHorizontal: 5,
         backgroundColor: colors.white,
-
-
+        justifyContent: 'space-between'
     },
     drawer: {
         borderRadius: 2,

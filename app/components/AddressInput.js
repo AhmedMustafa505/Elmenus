@@ -50,7 +50,7 @@ function AddressInput(props) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
         paddingHorizontal: 20
     },

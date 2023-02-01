@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 import defaultStyles from "../config/styles";
@@ -23,11 +24,9 @@ function FindRestaurant({ navigation }) {
                     placeholder='Find a Restaurant or Dish'
                 />
             </View>
-            <View>
-                <TouchableOpacity style={styles.sort} onPress={() => navigation.goBack()}>
-                    <Text style={{ fontSize: 17, color: defaultStyles.colors.medium }}> Cancel </Text>
-                </TouchableOpacity>
-            </View>
+            <TouchableOpacity style={styles.sort} onPress={() => navigation.goBack()}>
+                <Text style={{ fontSize: 17, color: defaultStyles.colors.medium }}> Cancel </Text>
+            </TouchableOpacity>
         </View>
     );
 
@@ -36,7 +35,7 @@ function FindRestaurant({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
         paddingHorizontal: 20,
     },
@@ -47,8 +46,8 @@ const styles = StyleSheet.create({
         padding: 2,
         borderWidth: 1,
         borderColor: defaultStyles.colors.light,
-        height: 55,
-        width: 260,
+        width: wp('70%'),
+        height: hp('8%'),
 
     },
     icon: {
@@ -57,8 +56,7 @@ const styles = StyleSheet.create({
         padding: 2
     },
     sort: {
-        width: 70,
-        height: 30,
+        width: wp('15%'),
         backgroundColor: defaultStyles.colors.white,
         justifyContent: 'center'
     }

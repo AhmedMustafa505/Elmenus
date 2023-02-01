@@ -58,7 +58,12 @@ function UserDetailsScreen({ navigation }) {
                 placeholder='Change Name'
             />
             <AppButton title='Submit' onPress={() => {
-                { updateUser(name, user), navigation.navigate('UserScreen') }
+                {
+
+                    if (name != '') {
+                        updateUser(name, user), navigation.navigate('UserScreen')
+                    }
+                }
             }} />
         </Screen>
     );

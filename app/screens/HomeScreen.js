@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, FlatList, Text, Image, TouchableOpacity } from 'react-native';
-
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import AddressInput from '../components/AddressInput';
 import DeliveryModal from '../components/DeliveryModal';
@@ -68,29 +68,23 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         textAlign: "center",
     },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: "100%",
-        marginBottom: 15
-    },
     firstViewContainer: {
         paddingHorizontal: 8
     },
     boxContainer: {
-        width: '90%',
-        height: 130,
+        width: wp('75%'),
+        height: hp('20%'),
         backgroundColor: colors.white,
         flexDirection: 'row',
         padding: 15
     },
     image: {
-        width: 100,
-        height: 100
+        width: wp('25%'),
+        height: hp('12%'),
     },
     text: {
-        marginLeft: 50,
-        marginTop: 20,
+        marginLeft: wp("8%"),
+        marginTop: hp('2%'),
         fontSize: 16
     }
 });

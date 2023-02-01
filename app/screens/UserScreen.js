@@ -13,7 +13,7 @@ function UserScreen({ navigation }) {
 
     const logout = async () => {
         await clearSession();
-        // await clearSession();
+        await clearSession();
         navigation.navigate('Welcome');
     };
 

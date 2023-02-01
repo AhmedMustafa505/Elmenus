@@ -143,7 +143,7 @@ android {
 
     defaultConfig {
 // @generated begin react-native-auth0-manifest-placeholder - expo prebuild (DO NOT MODIFY) sync-4f406a9a9895e0ecde760eb18dbcd5c037493014
-manifestPlaceholders = [auth0Domain: "dev-uosgun8aovk578bx.us.auth0.com", auth0Scheme:"com.anonymous.elmenus"]
+manifestPlaceholders = [auth0Domain: "dev-uosgun8aovk578bx.us.auth0.com", auth0Scheme:"${applicationId}"]
 // @generated end react-native-auth0-manifest-placeholder
         applicationId 'com.anonymous.elmenus'
         minSdkVersion rootProject.ext.minSdkVersion
@@ -279,7 +279,7 @@ manifestPlaceholders = [auth0Domain: "dev-uosgun8aovk578bx.us.auth0.com", auth0S
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
+implementation project(':react-native-auth0')
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 

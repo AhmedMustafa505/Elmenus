@@ -28,7 +28,7 @@ function UserNavigator() {
                         name="UserScreen"
                         component={UserScreen}
                         options={{
-                            headerShown: false,
+                            // headerShown: false,
                             title: 'Profile',
                             headerTintColor: colors.primary,
                             headerTitleStyle: styles.title
